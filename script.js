@@ -19,23 +19,32 @@ function validateCreditCard(cardNumber) {
   }
 }
 
-// Dictionary of test cases with expected results
-const testCases = {
-  "4111 1111 1111 1111": "Visa", // Valid Visa card
-  "4222 2222 2222 2222": "Visa", // Another valid Visa card
-  "5105 1051 0510 5100": "Mastercard", // Valid Mastercard
-  "5200 8282 8282 8210": "Mastercard", // Another valid Mastercard
-  "5061 2345 6789 0123": "Verve", // Valid Verve card
-  "6500 1234 5678 9012": "Verve", // Another valid Verve card
-  "1234 5678 9876 5432": "Invalid", // Invalid card number
-  "9999 8888 7777 6666": "Invalid", // Another invalid card number
-};
+// List of test cases
+const testCases = [
+  "4111 1111 1111 1111",
+  "4222 2222 2222 2222",
+  "4000 1234 5678 9010",
+  "4012 8888 8888 1881",
+  "5105 1051 0510 5100",
+  "5200 8282 8282 8210",
+  "5309 3412 3456 7890",
+  "5511 2222 3333 4444",
+  "5061 2345 6789 0123",
+  "6500 1234 5678 9012",
+  "6331 5678 9101 1123",
+  "5061 9876 5432 1098",
+  "1234 5678 9876 5432",
+  "9999 8888 7777 6666",
+  "0000 0000 0000 0000",
+  "4111 1111 1111",
+  "5105 1051 0510",
+  "5061 2345 6789",
+];
 
 // Run validation on each test case
 console.log("Credit Card Validation Results:");
-for (const [cardNumber, expected] of Object.entries(testCases)) {
-  const result = validateCreditCard(cardNumber);
+for (const cardNumber of testCases) {
   console.log(
-    `Card Number: ${cardNumber} -> ${result} (Expected: ${expected})`
+    `Card Number: ${cardNumber} -> ${validateCreditCard(cardNumber)}`
   );
 }
