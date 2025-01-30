@@ -38,7 +38,7 @@ Each regex pattern is designed to match the specific structure and starting digi
 
 ### Supported Credit Card Types:
 
-- Visa
+- Visa Card
 - Mastercard
 - Verve Card
 
